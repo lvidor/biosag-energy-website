@@ -39,3 +39,22 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# temporary scripts and data files
+*-import*.js
+fetch-*.js
+update-*.js
+seed-*.js
+debug-*.js
+check-*.js
+reset-*.js
+clean-*.js
+smart-*.js
+quick-*.js
+add-*.js
+*.ndjson
+faqs-*.json
+faqs-*.txt
+tmp_*.json
+sanity-*.groq
+

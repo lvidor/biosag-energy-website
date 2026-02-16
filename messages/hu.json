@@ -1,0 +1,274 @@
+{
+    "Navbar": {
+        "home": "Kezdőlap",
+        "services": "Szolgáltatások",
+        "projects": "Projektek",
+        "shop": "Webshop",
+        "blog": "Blog",
+        "about": "Rólunk",
+        "contact": "Kapcsolat"
+    },
+    "Hero": {
+        "title": "Okos energia az otthonának",
+        "subtitle": "Loxone automatizálás és naperőművek",
+        "cta": "Kapcsolatfelvétel"
+    },
+    "Features": {
+        "title": "Szolgáltatásaink",
+        "subtitle": "Teljes körű megoldások otthona vagy üzlethelyisége automatizálásához"
+    },
+    "Common": {
+        "readMore": "Olvass tovább",
+        "send": "Küldés",
+        "sending": "Küldés folyamatban...",
+        "sent": "Elküldve!",
+        "error": "Hiba"
+    },
+    "ProcessSteps": {
+        "title": "Automatizálás 5 lépésben",
+        "subtitle": "Az ötlettől a megvalósításig - bevált folyamatunk az okos otthonához.",
+        "step1": {
+            "title": "Tervezés",
+            "description": "Segítünk megtervezni projektjét. Tanácsot adunk, hogyan valósíthatja meg igényeit a különböző funkciókkal."
+        },
+        "step2": {
+            "title": "Kábelezés vagy AIR",
+            "description": "Kollégánk ellenőrzi a kábelezési lehetőségeket az Ön terében, valamint a vezeték nélküli telepítés lehetőségét."
+        },
+        "step3": {
+            "title": "Rendszerbeállítás",
+            "description": "A sikeres telepítés után kollégánk konfigurálja a rendszer, figyelembe véve a könnyű kezelhetőséget."
+        },
+        "step4": {
+            "title": "Használat",
+            "description": "Ebben a fázisban már élvezheti a LOXONE nyújtotta előnyöket."
+        },
+        "step5": {
+            "title": "Optimalizálás és fejlesztés",
+            "description": "Kapcsolatfelvétel kollégánkkal a rendszer further finomhangolása és bővítése érdekében."
+        }
+    },
+    "About": {
+        "title": "Rólunk",
+        "subtitle": "Az Ön partnere az intelligens automatizálásban",
+        "description": [
+            "A Biosag Energy Kft. vezető vállalat az otthon- és épületautomatizálás területén Szerbiában. A 2016-ban alapított cégünk a piacon elérhető legfejlettebb okosotthon-megoldás, a Loxone rendszerek professzionális telepítésére és karbantartására szakosodott.",
+            "Szakértő csapatunk teljes körű megoldásokat kínál - a tervezéstől és projektálástól kezdve a telepítésen és konfiguráláson át a hosszú távú támogatásig. Legyen szó energiahatékonyság növeléséről, a kényelem fokozásáról vagy otthona, üzlethelyisége biztonságának megerősítéséről, mi itt vagyunk, hogy segítsünk.",
+            "Loxone Silver Partnerként a legmagasabb szintű szakértelmet és minőségi szolgáltatást garantáljuk. Otthona Önnek dolgozhat - engedje meg, hogy megmutassuk, hogyan."
+        ],
+        "stats": {
+            "founded": "Alapítás éve",
+            "projects": "Megvalósult projekt",
+            "partner": "Silver Partner"
+        },
+        "features": {
+            "installation": {
+                "title": "Professzionális telepítés",
+                "description": "Tanúsított szakértők az elektromos szerelés és a Loxone rendszerek területén"
+            },
+            "partner": {
+                "title": "Loxone Silver Partner",
+                "description": "Hivatalos partner és a Loxone termékek meghatalmazott forgalmazója"
+            },
+            "team": {
+                "title": "Tapasztalt csapat",
+                "description": "Szakértő csapat sokéves tapasztalattal az automatizálásban"
+            },
+            "support": {
+                "title": "Teljes körű támogatás",
+                "description": "A tervezéstől a karbantartásig - minden lépésnél Ön mellett állunk"
+            }
+        }
+    },
+    "Projects": {
+        "title": "Projektjeink",
+        "subtitle": "Tekintse meg néhány megvalósult automatizálási projektünket",
+        "all": "Mind",
+        "categories": {
+            "home-automation": "Otthonautomatizálás",
+            "commercial": "Üzleti terek",
+            "outdoor": "Kültéri automatizálás",
+            "security": "Biztonság és felügyelet",
+            "energy": "Energiahatékonyság"
+        },
+        "noResults": "Nincs projekt ebben a kategóriában",
+        "location": "Helyszín",
+        "readMore": "Részletek"
+    },
+    "Certificates": {
+        "title": "Tanúsítványok és Licencek",
+        "subtitle": "Szakértelmünket hivatalos tanúsítványok és licencek igazolják",
+        "featured": "Kiemelt",
+        "issuer": "Kibocsátó",
+        "date": "Dátum",
+        "categories": {
+            "partner": "Partner Tanúsítvány",
+            "electrical": "Elektromos Licenc",
+            "iso": "ISO Tanúsítvány",
+            "training": "Képzés",
+            "other": "Egyéb"
+        }
+    },
+    "FAQ": {
+        "title": "Gyakori kérdések",
+        "subtitle": "Válaszok a szolgáltatásainkkal kapcsolatos leggyakoribe kérdésekre",
+        "searchPlaceholder": "Keresés a kérdések között...",
+        "noResults": "Nincs találat a keresésre",
+        "categories": {
+            "all": "Mind",
+            "general": "Általános",
+            "loxone": "Loxone rendszer",
+            "installation": "Telepítés",
+            "pricing": "Árak és fizetés",
+            "maintenance": "Karbantartás",
+            "solar": "Naperőművek",
+            "electrical": "Elektromos szerelés"
+        },
+        "cta": {
+            "title": "Nem találta a választ?",
+            "subtitle": "Lépjen velünk kapcsolatba közvetlenül, és szívesen segítünk",
+            "button": "Kapcsolatfelvétel"
+        }
+    },
+    "Contact": {
+        "title": "Kapcsolat",
+        "subtitle": "Kérdése van otthona automatizálásával kapcsolatban? Írjon nekünk, és szívesen segítünk.",
+        "info": {
+            "phone": "Telefon",
+            "email": "Email",
+            "address": "Cím",
+            "hours": "Nyitvatartás",
+            "monFri": "Hétfő - Péntek",
+            "sat": "Szombat",
+            "sun": "Vasárnap",
+            "byAppt": "Megbeszélés szerint",
+            "closed": "Zárva"
+        },
+        "form": {
+            "name": "Név és vezetéknév",
+            "namePlaceholder": "Az Ön neve",
+            "email": "Email",
+            "emailPlaceholder": "az@on@email.cime",
+            "phone": "Telefon",
+            "phonePlaceholder": "+381 63 123 4567",
+            "message": "Üzenet",
+            "messagePlaceholder": "Írja le projektjét vagy tegye fel kérdését...",
+            "send": "Üzenet küldése",
+            "sending": "Küldés...",
+            "success": "Üzenet elküldve!",
+            "successSub": "Hamarosan jelentkezünk."
+        }
+    },
+    "Footer": {
+        "categories": {
+            "services": "Szolgáltatások",
+            "company": "Vállalat",
+            "support": "Támogatás",
+            "legal": "Jogi"
+        },
+        "links": {
+            "home-automation": "Otthonautomatizálás",
+            "loxone-systems": "Loxone rendszerek",
+            "electrical-installations": "Elektromos szerelés",
+            "video-surveillance": "Videófelügyelet",
+            "access-control": "Beléptető rendszerek",
+            "outdoor-automation": "Kültéri automatizálás",
+            "about": "Rólunk",
+            "projects": "Projektek",
+            "certificates": "Tanúsítványok",
+            "contact": "Kapcsolat",
+            "documentation": "Dokumentáció",
+            "maintenance": "Karbantartás",
+            "warranty": "Garancia",
+            "faq": "Gyakori kérdések",
+            "privacy-policy": "Adatvédelmi irányelvek",
+            "terms-of-use": "Felhasználási feltételek",
+            "iso": "ISO (hamarosan)"
+        },
+        "copyright": "Minden jog fenntartva.",
+        "pib": "Adószám",
+        "mb": "Cégjegyzékszám"
+    },
+    "Metadata": {
+        "title": "Biosag Energy - Loxone okosotthonok | Automatizálás | Naperőművek",
+        "description": "Biosag Energy - Loxone Silver Partner. Professzionális otthonautomatizálás, elektromos szerelés, naperőművek és videófelügyelet Szerbiában. Ingyenes konzultáció!",
+        "ogTitle": "Biosag Energy - Loxone okosotthonok és automatizálás"
+    },
+    "HomePage": {
+        "hero_efficiency": "Az energiahatékonyság találkozik a kényelemmel.",
+        "hero_specialize": "A Loxone technológiát használó otthon- és épületautomatizálásra szakosodtunk. Az tereket intelligens ökoszisztémákká alakítjuk.",
+        "loxone_partner": "Loxone Ezüst Partner",
+        "intelligent_automation": "Intelligens automatizálás.",
+        "automation_desc": "Az árnyékolástól és világítástól kezdve az intelligens fűtésszabályozásig. Rendszereink Ön helyett gondolkodnak, energiát takarítanak meg, miközben tökéletesen alkalmazkodnak az igényeihez.",
+        "discover_loxone": "Fedezze fel a Loxone-t",
+        "project_planning": "Projekttervezés.",
+        "concept_to_reality": "Az ötlettől a megvalósításig."
+    },
+    "Shop": {
+        "title": "Webshop",
+        "subtitle": "Minőségi Loxone és napelemes alkatrészek professzionális rendszerekhez",
+        "categories": {
+            "all": "Összes",
+            "control": "Vezérlés",
+            "sensors": "Szenzorok",
+            "solar": "Napelemek",
+            "lighting": "Világítás",
+            "audio": "Audio",
+            "accessories": "Kiegészítők"
+        },
+        "priceOnRequest": "Ár kérésre",
+        "inquire": "Érdeklődöm",
+        "specifications": "Specifikációk",
+        "noProducts": "Nincs termék ebben a kategóriában",
+        "clearCart": "Kosár ürítése",
+        "cart": "Kosár"
+    },
+    "Blog": {
+        "title": "Hírek és blog",
+        "subtitle": "Friss információk a Loxone világából és projektjeinkről",
+        "readMore": "Elolvasom",
+        "noPosts": "Hamarosan érkeznek a friss hírek!",
+        "categories": {
+            "news": "Hírek",
+            "tech": "Technológia",
+            "projects": "Projektek",
+            "maintenance": "Karbantartás"
+        }
+    },
+    "Testimonials": {
+        "title": "Ügyfeleink véleménye",
+        "subtitle": "Ismerje meg, miért választották a Biosag Energy-t okosotthonuk megvalósításához",
+        "noResults": "Még nincsenek vélemények."
+    },
+    "Estimator": {
+        "title": "Okosotthon Árkalkulátor",
+        "subtitle": "Kapjon egy hozzávetőleges becslést Loxone rendszerére percek alatt",
+        "steps": {
+            "rooms": "Helyiségek száma",
+            "roomsDesc": "Mekkora ingatlanról van szó?",
+            "features": "Kért funkciók",
+            "featuresDesc": "Milyen funkciókat automatizáljunk?",
+            "level": "Automatizáltsági szint"
+        },
+        "levels": {
+            "base": "Alap",
+            "comfort": "Komfort",
+            "premium": "Prémium"
+        },
+        "features": {
+            "lighting": "Intelligens világítás",
+            "heating": "Fűtésszabályozás",
+            "blinds": "Árnyékolás",
+            "audio": "Multiroom Audio",
+            "security": "Biztonság és Riasztó"
+        },
+        "calculate": "Számítás",
+        "estimateTitle": "Becsült beruházási költség",
+        "estimateNote": "*Ez egy hozzávetőleges becslés a Loxone központi egységek, szenzorok és alapvető installáció alapján. A pontos árhoz kérjen konzultációt.",
+        "getProposal": "Kérjen pontos ajánlatot",
+        "roomLabel": "Helyiség",
+        "back": "Vissza",
+        "continue": "Folytatás",
+        "restart": "Újrakezdés"
+    }
+}

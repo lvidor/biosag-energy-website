@@ -1,0 +1,274 @@
+{
+    "Navbar": {
+        "home": "Početna",
+        "services": "Usluge",
+        "projects": "Projekti",
+        "shop": "Prodavnica",
+        "blog": "Blog",
+        "about": "O nama",
+        "contact": "Kontakt"
+    },
+    "Hero": {
+        "title": "Pametna energija za vaš dom",
+        "subtitle": "Loxone automatizacija i solarne elektrane",
+        "cta": "Kontaktirajte nas"
+    },
+    "Features": {
+        "title": "Naše usluge",
+        "subtitle": "Kompletna rešenja za automatizaciju vašeg doma ili poslovnog prostora"
+    },
+    "Common": {
+        "readMore": "Pročitaj više",
+        "send": "Pošalji",
+        "sending": "Šalje se...",
+        "sent": "Poslato!",
+        "error": "Greška"
+    },
+    "ProcessSteps": {
+        "title": "Automatizacija u 5 koraka",
+        "subtitle": "Od ideje do realizacije - naš proveren proces za vaš pametni dom.",
+        "step1": {
+            "title": "Planiranje",
+            "description": "Pomoći ćemo Vam da isplanirate vaš projekat. Pružamo Vam savete kako da ostvarite vaše želje i potrebe uz razne funkcionalnosti."
+        },
+        "step2": {
+            "title": "Kabliranje ili AIR",
+            "description": "Naš kolega će proveriti mogućnosti kabliranja u vašem prostoru kao i mogućnosti bežične instalacije."
+        },
+        "step3": {
+            "title": "Podešavanje sistema",
+            "description": "Nakon uspešne instalacije, naš kolega će konfigurisati sistem uzimajući u obzir jednostavnost upravljanja i intuitivno korišćenje sistema."
+        },
+        "step4": {
+            "title": "Upotreba",
+            "description": "U ovoj fazi već možete da uživate u prednostima koje LOXONE pruža."
+        },
+        "step5": {
+            "title": "Optimizacija i razvoj",
+            "description": "Kontakt sa našim kolegom radi daljeg finog podešavanja i proširivanja sistema."
+        }
+    },
+    "About": {
+        "title": "O nama",
+        "subtitle": "Vaš partner za pametnu automatizaciju",
+        "description": [
+            "Biosag Energy DOO je vodeća kompanija u oblasti automatizacije kuća i zgrada u Srbiji. Osnovani 2016. godine, specijalizovali smo se za profesionalnu instalaciju i održavanje Loxone sistema - najnaprednijeg rešenja za pametne domove na tržištu.",
+            "Naš tim stručnjaka pruža kompletna rešenja - od planiranja i projektovanja, preko instalacije, do konfiguracije i dugotrajne podrške. Bilo da želite da poboljšate energetsku efikasnost, povećate udobnost ili sigurnost vašeg doma ili poslovnog prostora, mi smo tu da vam pomognemo.",
+            "Kao Loxone Silver Partner, garantujemo najviši nivo stručnosti i kvaliteta usluge. Vaš dom može raditi za vas - dozvolite nam da vam pokažemo kako."
+        ],
+        "stats": {
+            "founded": "Godina osnivanja",
+            "projects": "Realizovanih projekata",
+            "partner": "Silver Partner"
+        },
+        "features": {
+            "installation": {
+                "title": "Profesionalna instalacija",
+                "description": "Sertifikovani stručnjaci za električne instalacije i Loxone sisteme"
+            },
+            "partner": {
+                "title": "Loxone Silver Partner",
+                "description": "Zvanični partner i ovlašćeni distributer Loxone proizvoda"
+            },
+            "team": {
+                "title": "Iskusan tim",
+                "description": "Tim stručnjaka sa dugogodišnjim iskustvom u automatizaciji"
+            },
+            "support": {
+                "title": "Kompletna podrška",
+                "description": "Od planiranja do održavanja - tu smo za vas u svakom koraku"
+            }
+        }
+    },
+    "Projects": {
+        "title": "Naši projekti",
+        "subtitle": "Pogledajte neke od naših realizovanih projekata automatizacije",
+        "all": "Sve",
+        "categories": {
+            "home-automation": "Automatizacija kuća",
+            "commercial": "Poslovni prostori",
+            "outdoor": "Spoljašnja automatizacija",
+            "security": "Sigurnost i nadzor",
+            "energy": "Energetska efikasnost"
+        },
+        "noResults": "Nema projekata u ovoj kategoriji",
+        "location": "Lokacija",
+        "readMore": "Detaljnije"
+    },
+    "Certificates": {
+        "title": "Sertifikati i Licence",
+        "subtitle": "Naša stručnost potvrđena zvaničnim sertifikatima i licencama",
+        "featured": "Istaknut",
+        "issuer": "Izdavač",
+        "date": "Datum",
+        "categories": {
+            "partner": "Partner Sertifikat",
+            "electrical": "Električna Licenca",
+            "iso": "ISO Sertifikat",
+            "training": "Obuka",
+            "other": "Ostalo"
+        }
+    },
+    "FAQ": {
+        "title": "Česta pitanja",
+        "subtitle": "Odgovori na najčešće postavljana pitanja o našim uslugama",
+        "searchPlaceholder": "Pretražite pitanja...",
+        "noResults": "Nema rezultata za vašu pretragu",
+        "categories": {
+            "all": "Sve",
+            "general": "Opšte",
+            "loxone": "Loxone sistem",
+            "installation": "Instalacija",
+            "pricing": "Cene i plaćanje",
+            "maintenance": "Održavanje",
+            "solar": "Solarne elektrane",
+            "electrical": "Električne instalacije"
+        },
+        "cta": {
+            "title": "Niste pronašli odgovor?",
+            "subtitle": "Kontaktirajte nas direktno i rado ćemo vam pomoći",
+            "button": "Kontaktirajte nas"
+        }
+    },
+    "Contact": {
+        "title": "Kontaktirajte nas",
+        "subtitle": "Imate pitanja o automatizaciji vašeg doma? Javite nam se i rado ćemo vam pomoći.",
+        "info": {
+            "phone": "Telefon",
+            "email": "Email",
+            "address": "Adresa",
+            "hours": "Radno vreme",
+            "monFri": "Ponedeljak - Petak",
+            "sat": "Subota",
+            "sun": "Nedelja",
+            "byAppt": "Po dogovoru",
+            "closed": "Zatvoreno"
+        },
+        "form": {
+            "name": "Ime i prezime",
+            "namePlaceholder": "Vaše ime",
+            "email": "Email",
+            "emailPlaceholder": "vas@email.com",
+            "phone": "Telefon",
+            "phonePlaceholder": "+381 63 123 4567",
+            "message": "Poruka",
+            "messagePlaceholder": "Opišite vaš projekat ili postavite pitanje...",
+            "send": "Pošalji poruku",
+            "sending": "Šalje se...",
+            "success": "Poruka poslata!",
+            "successSub": "Javićemo vam se uskoro."
+        }
+    },
+    "Footer": {
+        "categories": {
+            "services": "Usluge",
+            "company": "Kompanija",
+            "support": "Podrška",
+            "legal": "Pravno"
+        },
+        "links": {
+            "home-automation": "Automatizacija kuća",
+            "loxone-systems": "Loxone sistemi",
+            "electrical-installations": "Električne instalacije",
+            "video-surveillance": "Video nadzor",
+            "access-control": "Kontrola pristupa",
+            "outdoor-automation": "Spoljašnja automatizacija",
+            "about": "O nama",
+            "projects": "Projekti",
+            "certificates": "Sertifikati",
+            "contact": "Kontakt",
+            "documentation": "Dokumentacija",
+            "maintenance": "Održavanje",
+            "warranty": "Garancija",
+            "faq": "Česta pitanja",
+            "privacy-policy": "Politika privatnosti",
+            "terms-of-use": "Uslovi korišćenja",
+            "iso": "ISO (uskoro)"
+        },
+        "copyright": "Sva prava zadržana.",
+        "pib": "PIB",
+        "mb": "MB"
+    },
+    "Metadata": {
+        "title": "Biosag Energy - Loxone Pametne Kuće | Automatizacija | Solarne Elektrane",
+        "description": "Biosag Energy - Loxone Silver Partner. Profesionalna automatizacija kuća, električne instalacije, solarne elektrane i video nadzor u Srbiji. Besplatna konsultacija!",
+        "ogTitle": "Biosag Energy - Loxone Pametne Kuće i Automatizacija"
+    },
+    "HomePage": {
+        "hero_efficiency": "Energetska efikasnost se susreće sa udobnošću.",
+        "hero_specialize": "Specijalizovani smo za automatizaciju kuća i zgrada koristeći Loxone tehnologiju. Transformišemo prostore u inteligentne ekosisteme.",
+        "loxone_partner": "Loxone Silver Partner",
+        "intelligent_automation": "Inteligentna automatizacija.",
+        "automation_desc": "Od automatskog senčenja i osvetljenja do inteligentne kontrole grejanja. Naši sistemi misle za vas, štedeći energiju dok savršeno interaguju sa vašim potrebama.",
+        "discover_loxone": "Otkrijte Loxone",
+        "project_planning": "Planiranje projekta.",
+        "concept_to_reality": "Od koncepta do stvarnosti."
+    },
+    "Shop": {
+        "title": "Prodavnica",
+        "subtitle": "Kvalitetne Loxone i solarne komponente za profesionalne sisteme",
+        "categories": {
+            "all": "Sve",
+            "control": "Upravljanje",
+            "sensors": "Senzori",
+            "solar": "Solarni paneli",
+            "lighting": "Osvetljenje",
+            "audio": "Audio",
+            "accessories": "Pribor"
+        },
+        "priceOnRequest": "Cena na upit",
+        "inquire": "Pošalji upit",
+        "specifications": "Specifikacije",
+        "noProducts": "Nema proizvoda u ovoj kategoriji",
+        "clearCart": "Isprazni korpu",
+        "cart": "Korpa"
+    },
+    "Blog": {
+        "title": "Vesti i blog",
+        "subtitle": "Sveže informacije iz sveta Loxone automatizacije i naših projekata",
+        "readMore": "Pročitaj više",
+        "noPosts": "Vesti uskoro stižu!",
+        "categories": {
+            "news": "Vesti",
+            "tech": "Tehnologija",
+            "projects": "Projekti",
+            "maintenance": "Održavanje"
+        }
+    },
+    "Testimonials": {
+        "title": "Šta klijenti kažu o nama",
+        "subtitle": "Saznajte zašto su klijenti poverili Biosag Energy-ju automatizaciju svog doma",
+        "noResults": "Još uvek nema utisaka."
+    },
+    "Estimator": {
+        "title": "Kalkulator pametne kuće",
+        "subtitle": "Dobijte okvirnu procenu za Vaš Loxone sistem za nekoliko minuta",
+        "steps": {
+            "rooms": "Broj prostorija",
+            "roomsDesc": "Koliko prostorija želite da automatizujete?",
+            "features": "Željene funkcije",
+            "featuresDesc": "Koje funkcije želite da automatizujete?",
+            "level": "Nivo automatizacije"
+        },
+        "levels": {
+            "base": "Osnovni",
+            "comfort": "Komfor",
+            "premium": "Premium"
+        },
+        "features": {
+            "lighting": "Pametno osvetljenje",
+            "heating": "Kontrola grejanja",
+            "blinds": "Automatizacija roletni",
+            "audio": "Sistemi ozvučenja",
+            "security": "Bezbednost i alarm"
+        },
+        "calculate": "Izračunaj",
+        "estimateTitle": "Procenjena investicija",
+        "estimateNote": "*Ovo je okvirna procena zasnovana na Loxone opremi i osnovnoj instalaciji. Za tačnu ponudu zakažite konsultacije.",
+        "getProposal": "Zatražite tačnu ponudu",
+        "roomLabel": "Prostorija",
+        "back": "Nazad",
+        "continue": "Nastavi",
+        "restart": "Počni ispočetka"
+    }
+}
