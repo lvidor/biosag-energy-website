@@ -58,3 +58,4 @@ faqs-*.txt
 tmp_*.json
 sanity-*.groq
 
+.env*.local
