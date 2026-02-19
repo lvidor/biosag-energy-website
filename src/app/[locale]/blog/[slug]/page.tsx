@@ -9,6 +9,7 @@ import { PortableText } from "@portabletext/react";
 import { Calendar, ArrowLeft, Tag } from "lucide-react";
 import { Link } from "@/navigation";
 import { getTranslations } from "next-intl/server";
+import type { Metadata } from "next";
 
 async function getPost(slug: string, locale: string) {
     const localized = (field: string) => locale === 'hu' ? `coalesce(${field}Hu, ${field})` : field;
@@ -17,6 +18,7 @@ async function getPost(slug: string, locale: string) {
         `*[_type == "post" && slug.current == $slug][0] {
             _id,
             "title": ${localized('title')},
+            "excerpt": ${localized('excerpt')},
             "body": ${localized('body')},
             mainImage,
             publishedAt,
@@ -28,7 +30,54 @@ async function getPost(slug: string, locale: string) {
     );
 }
 
-export default async function BlogPostPage({ params: { locale, slug } }: { params: { locale: string, slug: string } }) {
+// Open Graph meta tagovi za Facebook, WhatsApp, Viber deljenje
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ locale: string; slug: string }>;
+}): Promise<Metadata> {
+    const { locale, slug } = await params;
+    const post = await getPost(slug, locale);
+
+    if (!post) return {};
+
+    const imageUrl = post.mainImage
+        ? urlFor(post.mainImage).width(1200).height(630).url()
+        : 'https://biosag-energy-website.vercel.app/og-image.jpg';
+
+    const description = post.excerpt || 'Biosag Energy - Loxone pametne kuće i automatizacija';
+
+    return {
+        title: `${post.title} | Biosag Energy`,
+        description,
+        openGraph: {
+            title: post.title,
+            description,
+            type: 'article',
+            url: `https://biosag-energy-website.vercel.app/${locale}/blog/${slug}`,
+            siteName: 'Biosag Energy',
+            publishedTime: post.publishedAt || post._createdAt,
+            images: [
+                {
+                    url: imageUrl,
+                    width: 1200,
+                    height: 630,
+                    alt: post.title,
+                },
+            ],
+            locale: locale === 'hu' ? 'hu_HU' : 'sr_RS',
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: post.title,
+            description,
+            images: [imageUrl],
+        },
+    };
+}
+
+export default async function BlogPostPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
+    const { locale, slug } = await params;
     const post = await getPost(slug, locale);
     const t = await getTranslations('Blog');
 
@@ -67,6 +116,11 @@ export default async function BlogPostPage({ params: { locale, slug } }: { param
                     <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-8 leading-tight">
                         {post.title}
                     </h1>
+                    {post.excerpt && (
+                        <p className="text-xl text-foreground/60 leading-relaxed">
+                            {post.excerpt}
+                        </p>
+                    )}
                 </header>
 
                 {post.mainImage && (
@@ -84,6 +138,7 @@ export default async function BlogPostPage({ params: { locale, slug } }: { param
                 <div className="prose prose-invert prose-lg max-w-none prose-headings:text-foreground prose-p:text-foreground/80 prose-strong:text-apple-blue prose-a:text-apple-blue hover:prose-a:underline">
                     <PortableText value={post.body} />
                 </div>
+
             </article>
 
             <Footer />

@@ -85,8 +85,8 @@ export function ContactForm() {
                                 </div>
                                 <div>
                                     <h3 className="font-semibold mb-1">{t('info.phone')}</h3>
-                                    <a href="tel:+381635433310" className="text-foreground/70 hover:text-[#8BC53F] transition-colors">
-                                        +381 63 543 3310
+                                    <a href="tel:+38163543310" className="text-foreground/70 hover:text-[#8BC53F] transition-colors">
+                                        +381 63 543 310
                                     </a>
                                 </div>
                             </div>

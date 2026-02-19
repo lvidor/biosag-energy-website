@@ -112,7 +112,7 @@ export default async function LocaleLayout({
                                 "latitude": 45.6167,
                                 "longitude": 20.0377
                             },
-                            "telephone": "+381635433310",
+                            "telephone": "+38163543310",
                             "email": "vidor.lakatos@biosag-energy.rs",
                             "openingHoursSpecification": [
                                 {

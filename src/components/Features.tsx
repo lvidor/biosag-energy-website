@@ -28,7 +28,7 @@ export function Features({ features }: FeaturesProps) {
     }
 
     return (
-        <section id="szolgaltatasok" className="py-24 bg-gradient-to-b from-background to-apple-gray dark:to-apple-dark">
+        <section id="usluge" className="py-24 bg-gradient-to-b from-background to-apple-gray dark:to-apple-dark">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

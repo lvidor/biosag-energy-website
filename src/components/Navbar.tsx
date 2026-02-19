@@ -153,7 +153,7 @@ export function Navbar() {
                         </button>
 
                         <a
-                            href="tel:+381635433310"
+                            href="tel:+38163543310"
                             className="bg-apple-blue text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-blue-600 transition-all hover:scale-105"
                         >
                             📞 {t('contact')}

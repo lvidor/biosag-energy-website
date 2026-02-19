@@ -50,7 +50,7 @@ export function FAQSection({ faqs }: FAQSectionProps) {
     };
 
     return (
-        <section className="py-24 bg-gradient-to-b from-background to-apple-gray dark:to-apple-dark">
+        <section id="faq" className="py-24 bg-gradient-to-b from-background to-apple-gray dark:to-apple-dark">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}

@@ -72,8 +72,8 @@ export function Footer() {
                         <h3 className="font-semibold text-foreground mb-3">{t('links.contact')}</h3>
                         <ul className="space-y-2">
                             <li>
-                                <a href="tel:+381635433310" className="hover:underline hover:text-foreground transition-colors">
-                                    📞 +381 63 543 3310
+                                <a href="tel:+38163543310" className="hover:underline hover:text-foreground transition-colors">
+                                    📞 +381 63 543 310
                                 </a>
                             </li>
                             <li>
