@@ -7,8 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ShoppingBag, Globe } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { client } from "@/sanity/lib/client";
-import { urlFor } from "@/sanity/lib/image";
+
 import { useCartStore } from "@/store/useCartStore";
 
 const CartBadge = () => {
@@ -37,7 +36,25 @@ export function Navbar() {
     const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
-    const [logo, setLogo] = useState<any>(null);
+    const [logoUrl, setLogoUrl] = useState<string>("/logo.png");
+
+    useEffect(() => {
+        fetch("/api/sanity-logo")
+            .then((res) => res.json())
+            .then((data) => {
+                if (data?.logo?.asset?._ref) {
+                    const ref: string = data.logo.asset._ref;
+                    // Convert Sanity asset ref to CDN URL
+                    // Format: image-{id}-{dimensions}-{format}
+                    const [, id, dimensions, format] = ref.split("-");
+                    setLogoUrl(
+                        `https://cdn.sanity.io/images/beba1xg7/production/${id}-${dimensions}.${format}`
+                    );
+                }
+            })
+            .catch(() => {/* keep fallback */ });
+    }, []);
+
 
     const navLinks = [
         { name: t('home'), href: "/" },
@@ -57,19 +74,7 @@ export function Navbar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    useEffect(() => {
-        const fetchLogo = async () => {
-            try {
-                const data = await client.fetch(`*[_type == "siteSettings"][0]{ logo }`);
-                if (data?.logo?.asset) {
-                    setLogo(data.logo);
-                }
-            } catch (error) {
-                console.error('Error fetching logo:', error);
-            }
-        };
-        fetchLogo();
-    }, []);
+
 
     const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
         if (href.startsWith('#')) {
@@ -103,20 +108,14 @@ export function Navbar() {
                 <div className="flex justify-between items-center h-14 text-sm font-medium">
                     {/* Logo */}
                     <Link href="/" className="text-foreground hover:opacity-80 transition-opacity flex items-center gap-2">
-                        {logo?.asset ? (
-                            <Image
-                                src={urlFor(logo).url()}
-                                alt={logo.alt || "Biosag Energy"}
-                                width={120}
-                                height={64}
-                                className="h-16 w-auto object-contain py-1"
-                                priority
-                            />
-                        ) : (
-                            <span className="text-xl font-bold bg-gradient-to-r from-[#8BC53F] to-[#0066CC] bg-clip-text text-transparent">
-                                Biosag Energy
-                            </span>
-                        )}
+                        <Image
+                            src={logoUrl}
+                            alt="Biosag Energy"
+                            width={180}
+                            height={60}
+                            className="h-12 w-auto object-contain"
+                            priority
+                        />
                     </Link>
 
                     {/* Desktop Links */}
