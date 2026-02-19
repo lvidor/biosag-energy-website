@@ -30,7 +30,21 @@ async function getData(locale: string) {
       "title": ${localized('title')},
       "description": ${localized('description')}
     }`),
-    client.fetch(`*[_type == "about"][0]`),
+    client.fetch(`*[_type == "about"][0]{
+      "title": ${localized('title')},
+      "subtitle": ${localized('subtitle')},
+      "description": ${localized('description')},
+      yearFounded,
+      teamImage,
+      "stats": stats[]{
+        number,
+        "label": ${localized('label')}
+      },
+      "certifications": certifications[]{
+        "name": ${localized('name')},
+        logo
+      }
+    }`),
     client.fetch(`*[_type == "project" && featured == true] | order(_createdAt desc) {
             ...,
             "title": ${localized('title')},
@@ -72,7 +86,12 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
       <Hero {...data.hero} />
       <Features features={data.features} />
-      {/* <AboutSection {...data.about} /> */}
+      <AboutSection
+        title={data.about?.title}
+        subtitle={data.about?.subtitle}
+        description={data.about?.description}
+        stats={data.about?.stats}
+      />
       <ProcessSteps />
 
       <ProjectsGallery projects={data.projects} locale={locale} />

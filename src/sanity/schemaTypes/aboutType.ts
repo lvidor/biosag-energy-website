@@ -60,7 +60,8 @@ export const aboutType = defineType({
                     type: 'object',
                     fields: [
                         { name: 'number', type: 'string', title: 'Broj' },
-                        { name: 'label', type: 'string', title: 'Oznaka' },
+                        { name: 'label', type: 'string', title: 'Oznaka (Srpski)' },
+                        { name: 'labelHu', type: 'string', title: 'Oznaka (Mađarski)' },
                     ],
                 },
             ],
@@ -73,7 +74,8 @@ export const aboutType = defineType({
                 {
                     type: 'object',
                     fields: [
-                        { name: 'name', type: 'string', title: 'Naziv' },
+                        { name: 'name', type: 'string', title: 'Naziv (Srpski)' },
+                        { name: 'nameHu', type: 'string', title: 'Naziv (Mađarski)' },
                         { name: 'logo', type: 'image', title: 'Logo' },
                     ],
                 },

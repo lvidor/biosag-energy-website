@@ -44,6 +44,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         "description": ${localized('description')},
         "fullDescription": ${localized('fullDescription')},
         "category": ${localized('category')},
+        "location": ${localized('location')},
+        "features": ${localized('features')},
         "mainImage": mainImage.asset->url,
         "gallery": gallery[].asset->url,
         "videos": videos[].asset->url

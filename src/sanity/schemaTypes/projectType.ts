@@ -113,7 +113,12 @@ export const projectType = defineType({
         }),
         defineField({
             name: 'location',
-            title: 'Lokacija',
+            title: 'Lokacija (Srpski)',
+            type: 'string',
+        }),
+        defineField({
+            name: 'locationHu',
+            title: 'Lokacija (Mađarski)',
             type: 'string',
         }),
         defineField({
@@ -128,7 +133,13 @@ export const projectType = defineType({
         }),
         defineField({
             name: 'features',
-            title: 'Karakteristike projekta',
+            title: 'Karakteristike projekta (Srpski)',
+            type: 'array',
+            of: [{ type: 'string' }],
+        }),
+        defineField({
+            name: 'featuresHu',
+            title: 'Karakteristike projekta (Mađarski)',
             type: 'array',
             of: [{ type: 'string' }],
         }),

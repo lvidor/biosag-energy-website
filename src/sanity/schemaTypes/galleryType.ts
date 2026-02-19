@@ -7,9 +7,14 @@ export const galleryType = defineType({
     fields: [
         defineField({
             name: 'title',
-            title: 'Naziv',
+            title: 'Naziv (Srpski)',
             type: 'string',
             validation: (Rule) => Rule.required(),
+        }),
+        defineField({
+            name: 'titleHu',
+            title: 'Naziv (Mađarski)',
+            type: 'string',
         }),
         defineField({
             name: 'category',
@@ -44,7 +49,12 @@ export const galleryType = defineType({
                         {
                             name: 'caption',
                             type: 'string',
-                            title: 'Opis slike',
+                            title: 'Opis slike (Srpski)',
+                        },
+                        {
+                            name: 'captionHu',
+                            type: 'string',
+                            title: 'Opis slike (Mađarski)',
                         }
                     ]
                 }
@@ -52,7 +62,13 @@ export const galleryType = defineType({
         }),
         defineField({
             name: 'description',
-            title: 'Opis',
+            title: 'Opis (Srpski)',
+            type: 'text',
+            rows: 3,
+        }),
+        defineField({
+            name: 'descriptionHu',
+            title: 'Opis (Mađarski)',
             type: 'text',
             rows: 3,
         }),
