@@ -81,17 +81,22 @@ export function AboutSection({
                     transition={{ duration: 1.2, delay: 0.5 }}
                     className="max-w-4xl mx-auto mb-16 prose prose-lg prose-invert"
                 >
-                    {Array.isArray(displayDescription) ? (
+                    {Array.isArray(displayDescription) && displayDescription.length > 0 && typeof displayDescription[0] === 'object' ? (
+                        // Portable Text blocks from Sanity
+                        <div className="text-lg text-foreground/80 leading-relaxed">
+                            <PortableText value={displayDescription} />
+                        </div>
+                    ) : Array.isArray(displayDescription) ? (
+                        // Plain string array (i18n fallback)
                         displayDescription.map((paragraph: string, index: number) => (
                             <p key={index} className="text-lg text-foreground/80 leading-relaxed mb-6">
                                 {paragraph}
                             </p>
                         ))
-                    ) : (
-                        <div className="text-lg text-foreground/80 leading-relaxed">
-                            <PortableText value={displayDescription} />
-                        </div>
-                    )}
+                    ) : displayDescription ? (
+                        // Single string
+                        <p className="text-lg text-foreground/80 leading-relaxed">{displayDescription}</p>
+                    ) : null}
                 </motion.div>
 
                 {/* Stats */}
