@@ -129,7 +129,7 @@ export function ContactForm() {
                         {/* Google Maps */}
                         <div className="mt-6 rounded-2xl overflow-hidden border border-foreground/10">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2804.8!2d20.0377!3d45.6167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDM3JzAwLjEiTiAyMMKwMDInMTUuNyJF!5e0!3m2!1sen!2srs!4v1234567890"
+                                src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d292.3187640948372!2d20.046210598291182!3d45.617170789942044!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1771359770531!5m2!1sen!2sus"
                                 width="100%"
                                 height="300"
                                 style={{ border: 0 }}

@@ -20,7 +20,7 @@ export function FAQSection({ faqs }: FAQSectionProps) {
     const t = useTranslations('FAQ');
     const [openIndex, setOpenIndex] = useState<number | null>(null);
     const [searchTerm, setSearchTerm] = useState("");
-    const [selectedCategory, setSelectedCategory] = useState<string>("all");
+    const [selectedCategory, setSelectedCategory] = useState<string>("Opšte");
 
     const categories = ['all', ...Array.from(new Set(faqs.map(f => f.category).filter((c): c is string => c !== undefined)))];
 
