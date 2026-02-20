@@ -35,7 +35,7 @@ export function HeroClient({ data }: { data: any }) {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/50"
+                    className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-br from-[#8BC53F] via-[#5da832] to-[#0066CC]"
                 >
                     {data?.title || "Biosag Energy"}
                 </motion.h1>
@@ -55,7 +55,7 @@ export function HeroClient({ data }: { data: any }) {
                     transition={{ duration: 1, delay: 0.4 }}
                     className="flex flex-col md:flex-row gap-4 justify-center items-center"
                 >
-                    <a href="#kontakt" className="bg-apple-blue text-white rounded-full px-8 py-3 text-lg font-medium hover:bg-blue-600 transition-all hover:scale-105">
+                    <a href="#kontakt" className="bg-gradient-to-r from-[#8BC53F] to-[#5da832] text-white rounded-full px-8 py-3 text-lg font-medium hover:opacity-90 hover:scale-105 transition-all shadow-lg shadow-[#8BC53F]/30">
                         {data?.cta || "Kontakt"}
                     </a>
                 </motion.div>
@@ -66,7 +66,7 @@ export function HeroClient({ data }: { data: any }) {
                 className="absolute bottom-0 w-full h-[50vh] z-0 pointer-events-none opacity-50"
             >
                 {/* Placeholder or Gradient Orb */}
-                <div className="w-[600px] h-[600px] bg-blue-500/20 rounded-full blur-3xl absolute bottom-[-300px] left-1/2 -translate-x-1/2" />
+                <div className="w-[700px] h-[700px] bg-[#8BC53F]/25 rounded-full blur-3xl absolute bottom-[-350px] left-1/2 -translate-x-1/2" />
             </motion.div>
         </section>
     );

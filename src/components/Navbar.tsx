@@ -154,7 +154,7 @@ export function Navbar() {
 
                         <a
                             href="tel:+38163543310"
-                            className="bg-apple-blue text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-blue-600 transition-all hover:scale-105"
+                            className="bg-gradient-to-r from-[#8BC53F] to-[#5da832] text-white px-4 py-2 rounded-full text-sm font-medium hover:opacity-90 hover:scale-105 transition-all shadow-md shadow-[#8BC53F]/30"
                         >
                             📞 {t('contact')}
                         </a>
