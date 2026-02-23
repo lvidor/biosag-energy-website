@@ -129,7 +129,7 @@ export function ContactForm() {
                         {/* Google Maps */}
                         <div className="mt-6 rounded-2xl overflow-hidden border border-foreground/10">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d292.3187640948372!2d20.046210598291182!3d45.617170789942044!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1771359770531!5m2!1sen!2sus"
+                                src="https://maps.google.com/maps?q=Glavna%2015%2C%20Be%C4%8Dej%2C%20Srbija&t=&z=15&ie=UTF8&iwloc=&output=embed"
                                 width="100%"
                                 height="300"
                                 style={{ border: 0 }}
