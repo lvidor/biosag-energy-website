@@ -1,7 +1,8 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Use a fallback to prevent Next.js build crash during static analysis if env var is missing
+const resend = new Resend(process.env.RESEND_API_KEY || 're_dummy_key_for_build');
 
 const ERROR_MESSAGES = {
   MISSING_FIELDS: 'Molimo popunite sva obavezna polja',
