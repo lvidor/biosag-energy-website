@@ -108,13 +108,10 @@ export function Navbar() {
                 <div className="flex justify-between items-center h-14 text-sm font-medium">
                     {/* Logo */}
                     <Link href="/" className="text-foreground hover:opacity-80 transition-opacity flex items-center gap-2">
-                        <Image
-                            src={logoUrl}
-                            alt="Biosag Energy"
-                            width={180}
-                            height={60}
+                        <img
+                            src={logoUrl || "/logo.png"}
+                            alt="Biosag Energy Logo"
                             className="h-12 w-auto object-contain"
-                            priority
                         />
                     </Link>
 
