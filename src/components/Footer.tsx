@@ -18,7 +18,7 @@ export function Footer() {
         [t('categories.company')]: [
             { name: t('links.about'), href: "#o-nama" },
             { name: t('links.projects'), href: "#projekti" },
-            { name: t('links.certificates'), href: "#sertifikati" },
+            { name: t('links.certificates'), href: "/sertifikati" },
             { name: t('links.contact'), href: "#kontakt" },
         ],
         [t('categories.support')]: [

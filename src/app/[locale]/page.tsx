@@ -57,7 +57,10 @@ async function getData(locale: string) {
       "answer": ${localized('answer')},
       "category": ${localized('category')}
     }`),
-    client.fetch(`*[_type == "certificate"] | order(_createdAt desc)`),
+    client.fetch(`*[_type == "certificate"] | order(_createdAt desc) {
+      ...,
+      "pdfUrl": pdfDocument.asset->url
+    }`),
     client.fetch(`*[_type == "testimonial" && featured == true] | order(_createdAt desc)`),
     client.fetch(`*[_type == "post"] | order(publishedAt desc, _createdAt desc)[0...3] {
             _id,

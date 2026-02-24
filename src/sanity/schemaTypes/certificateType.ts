@@ -62,6 +62,15 @@ export const certificateType = {
             },
         },
         {
+            name: 'pdfDocument',
+            title: 'PDF Dokument (Opciono)',
+            type: 'file',
+            description: 'Otpremite PDF verziju sertifikata ako postoji',
+            options: {
+                accept: '.pdf'
+            }
+        },
+        {
             name: 'description',
             title: 'Opis',
             type: 'text',
