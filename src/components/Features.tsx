@@ -33,7 +33,7 @@ export function Features({ features }: FeaturesProps) {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false, amount: 0.3 }}
+                    viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 1 }}
                     className="text-center mb-16"
                 >
@@ -56,7 +56,7 @@ export function Features({ features }: FeaturesProps) {
                                 key={feature._id}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: false, amount: 0.3 }}
+                                viewport={{ once: true, amount: 0.3 }}
                                 transition={{ duration: 0.8, delay: index * 0.1 }}
                                 className="group relative bg-white/5 backdrop-blur-sm border border-foreground/10 rounded-3xl p-8 hover:border-[#8BC53F]/50 transition-all duration-500 hover:shadow-xl hover:shadow-[#8BC53F]/10"
                             >

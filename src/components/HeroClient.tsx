@@ -65,8 +65,8 @@ export function HeroClient({ data }: { data: any }) {
                 style={{ scale }}
                 className="absolute bottom-0 w-full h-[50vh] z-0 pointer-events-none opacity-50"
             >
-                {/* Placeholder or Gradient Orb */}
-                <div className="w-[700px] h-[700px] bg-[#8BC53F]/25 rounded-full blur-3xl absolute bottom-[-350px] left-1/2 -translate-x-1/2" />
+                {/* Placeholder or Gradient Orb - Optimized with radial-gradient instead of blur */}
+                <div className="w-[700px] h-[700px] rounded-full absolute bottom-[-350px] left-1/2 -translate-x-1/2 transform-gpu will-change-transform" style={{ background: 'radial-gradient(circle, rgba(139, 197, 63, 0.2) 0%, transparent 70%)' }} />
             </motion.div>
         </section>
     );

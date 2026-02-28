@@ -42,9 +42,9 @@ export function BackgroundEffects() {
             ))}
 
             {/* Large gradient orbs - Brand colors */}
-            <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-[#8BC53F]/20 rounded-full blur-3xl animate-pulse" />
-            <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-[#0066CC]/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }} />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[#E30613]/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '3s' }} />
+            <div className="absolute top-0 left-1/4 w-[600px] h-[600px] rounded-full animate-pulse transform-gpu will-change-transform" style={{ background: 'radial-gradient(circle, rgba(139, 197, 63, 0.15) 0%, transparent 70%)' }} />
+            <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] rounded-full animate-pulse transform-gpu will-change-transform" style={{ background: 'radial-gradient(circle, rgba(0, 102, 204, 0.15) 0%, transparent 70%)', animationDelay: '1.5s' }} />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full animate-pulse transform-gpu will-change-transform" style={{ background: 'radial-gradient(circle, rgba(227, 6, 19, 0.1) 0%, transparent 70%)', animationDelay: '3s' }} />
 
             {/* Diagonal light beams */}
             <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-[#8BC53F]/5 to-transparent" />

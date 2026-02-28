@@ -46,7 +46,7 @@ export function ProcessSteps() {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false, amount: 0.3 }}
+                    viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.8 }}
                     className="text-center mb-20"
                 >
@@ -71,7 +71,7 @@ export function ProcessSteps() {
                                 key={index}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: false, amount: 0.3 }}
+                                viewport={{ once: true, amount: 0.3 }}
                                 transition={{ duration: 0.5, delay: index * 0.2 }}
                                 className="relative flex flex-col md:items-center md:text-center pl-20 md:pl-0"
                             >

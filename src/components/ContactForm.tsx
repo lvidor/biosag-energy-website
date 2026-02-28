@@ -68,7 +68,7 @@ export function ContactForm() {
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: false, amount: 0.3 }}
+                        viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 1.2 }}
                     >
                         <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#8BC53F] to-[#0066CC] bg-clip-text text-transparent">
@@ -145,7 +145,7 @@ export function ContactForm() {
                     <motion.div
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: false, amount: 0.3 }}
+                        viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 1.2 }}
                         className="bg-white/5 backdrop-blur-sm border border-foreground/10 rounded-3xl p-8"
                     >

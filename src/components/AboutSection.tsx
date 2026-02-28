@@ -61,7 +61,7 @@ export function AboutSection({
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false, amount: 0.3 }}
+                    viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 1.2 }}
                     className="text-center mb-16"
                 >
@@ -77,7 +77,7 @@ export function AboutSection({
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false, amount: 0.3 }}
+                    viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 1.2, delay: 0.5 }}
                     className="max-w-4xl mx-auto mb-16 prose prose-lg prose-invert"
                 >
@@ -103,7 +103,7 @@ export function AboutSection({
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false, amount: 0.3 }}
+                    viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 1.2, delay: 0.5 }}
                     className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20"
                 >
@@ -124,7 +124,7 @@ export function AboutSection({
                             key={index}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: false, amount: 0.3 }}
+                            viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 1.2, delay: 0.1 * index }}
                             className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-foreground/10 hover:border-[#8BC53F]/50 transition-all"
                         >

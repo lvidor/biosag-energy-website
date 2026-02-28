@@ -60,7 +60,7 @@ export function FAQSection({ faqs }: FAQSectionProps) {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false, amount: 0.3 }}
+                    viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 1.2 }}
                     className="text-center mb-12"
                 >
@@ -154,7 +154,7 @@ export function FAQSection({ faqs }: FAQSectionProps) {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false, amount: 0.3 }}
+                    viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 1.2, delay: 0.5 }}
                     className="mt-12 text-center p-8 bg-gradient-to-br from-green-400/10 to-blue-400/10 border border-[#8BC53F]/20 rounded-2xl"
                 >
