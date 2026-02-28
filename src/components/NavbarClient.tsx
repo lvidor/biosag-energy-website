@@ -91,14 +91,11 @@ export function NavbarClient({ initialLogoUrl }: { initialLogoUrl: string }) {
                 <div className="flex justify-between items-center h-14 text-sm font-medium">
                     {/* Logo */}
                     <Link href="/" className="text-foreground hover:opacity-80 transition-opacity flex items-center gap-2">
-                        <div
-                            className="h-10 w-10 flex-shrink-0 overflow-hidden rounded-full"
-                        >
+                        <div className="h-10 flex-shrink-0 flex items-center justify-center">
                             <img
                                 src={logoUrl}
                                 alt="Biosag Energy Logo"
-                                className="w-full object-cover object-top"
-                                style={{ height: "160%", marginTop: "-5%" }}
+                                className="h-full w-auto object-contain"
                             />
                         </div>
                         <span className="text-white font-bold text-sm tracking-wide leading-tight">
