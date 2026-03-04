@@ -17,6 +17,7 @@ export default createMiddleware({
 });
 
 export const config = {
-    // Match only internationalized pathnames
-    matcher: ['/', '/(sr|hu)/:path*']
+    // Match all routes except Next.js internals, API routes, and static files
+    // This ensures the middleware handles /projekti/..., /blog/..., /shop/... etc.
+    matcher: ['/((?!api|_next|_vercel|studio|.*\\..*).*)']
 };
