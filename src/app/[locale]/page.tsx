@@ -52,7 +52,9 @@ async function getData(locale: string) {
             ...,
             "title": ${localized('title')},
             "description": ${localized('description')},
-            "category": ${localized('category')}
+            "category": ${localized('category')},
+            "mainImage": mainImage.asset->url,
+            "location": ${localized('location')}
         }`),
     client.fetch(`*[_type == "faq"] | order(_createdAt desc){
       ...,

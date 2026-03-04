@@ -7,6 +7,11 @@ import { Footer } from "@/components/Footer";
 import { getTranslations } from "next-intl/server";
 import { Metadata } from "next";
 
+// Allow new project slugs not in generateStaticParams to be rendered on-demand
+export const dynamicParams = true;
+// Revalidate cached pages every 60 seconds
+export const revalidate = 60;
+
 interface ProjectPageProps {
     params: Promise<{ locale: string; slug: string }>;
 }
