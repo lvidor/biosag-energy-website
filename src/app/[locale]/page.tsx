@@ -15,6 +15,9 @@ import { Footer } from "@/components/Footer";
 import { BackgroundEffects } from "@/components/BackgroundEffects";
 import { getTranslations } from 'next-intl/server';
 
+// Revalidate every 60 seconds so new Sanity content appears without full rebuild
+export const revalidate = 60;
+
 async function getData(locale: string) {
   const localized = (field: string) => locale === 'hu' ? `coalesce(${field}Hu, ${field})` : field;
 
@@ -45,7 +48,7 @@ async function getData(locale: string) {
         logo
       }
     }`),
-    client.fetch(`*[_type == "project" && featured == true] | order(_createdAt desc) {
+    client.fetch(`*[_type == "project"] | order(_createdAt desc)[0...6] {
             ...,
             "title": ${localized('title')},
             "description": ${localized('description')},

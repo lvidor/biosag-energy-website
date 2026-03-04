@@ -9,7 +9,11 @@ export default createMiddleware({
 
     // Don't prefix the default locale (sr) in the URL
     // e.g. /about (sr) vs /hu/about (hu)
-    localePrefix: 'as-needed'
+    localePrefix: 'as-needed',
+
+    // Disable automatic locale detection from browser cookies/Accept-Language header
+    // This ensures SR is always the default unless URL explicitly contains /hu/
+    localeDetection: false
 });
 
 export const config = {
