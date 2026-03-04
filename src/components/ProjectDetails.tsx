@@ -124,73 +124,75 @@ export function ProjectDetails({ project, locale }: ProjectDetailsProps) {
                     )}
                 </div>
 
-                {/* Sidebar Info */}
-                <div className="space-y-8">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                        className="bg-apple-gray dark:bg-apple-card-dark p-8 rounded-3xl sticky top-24 shadow-sm border border-black/5 dark:border-white/5"
-                    >
-                        <h3 className="text-xl font-bold mb-6">Informacije o projektu</h3>
+                {/* Sidebar Info — only shown if at least one field is available */}
+                {(project.category || project.location || project.completionDate || project.client || (project.features && project.features.length > 0)) && (
+                    <div className="space-y-8">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.2 }}
+                            className="bg-white/5 backdrop-blur-sm p-8 rounded-3xl sticky top-24 border border-white/10"
+                        >
+                            <h3 className="text-xl font-bold mb-6">Informacije o projektu</h3>
 
-                        <div className="space-y-6">
-                            {project.category && (
-                                <div className="flex items-start gap-4">
-                                    <Tag className="w-5 h-5 text-apple-blue mt-1" />
-                                    <div>
-                                        <p className="text-sm text-foreground/50">Kategorija</p>
-                                        <p className="font-medium">{t(`categories.${project.category}`)}</p>
+                            <div className="space-y-6">
+                                {project.category && (
+                                    <div className="flex items-start gap-4">
+                                        <Tag className="w-5 h-5 text-apple-blue mt-1" />
+                                        <div>
+                                            <p className="text-sm text-foreground/50">Kategorija</p>
+                                            <p className="font-medium">{t(`categories.${project.category}`)}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            )}
-                            {project.location && (
-                                <div className="flex items-start gap-4">
-                                    <MapPin className="w-5 h-5 text-apple-blue mt-1" />
-                                    <div>
-                                        <p className="text-sm text-foreground/50">Lokacija</p>
-                                        <p className="font-medium">{project.location}</p>
+                                )}
+                                {project.location && (
+                                    <div className="flex items-start gap-4">
+                                        <MapPin className="w-5 h-5 text-apple-blue mt-1" />
+                                        <div>
+                                            <p className="text-sm text-foreground/50">Lokacija</p>
+                                            <p className="font-medium">{project.location}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            )}
-                            {project.completionDate && (
-                                <div className="flex items-start gap-4">
-                                    <Calendar className="w-5 h-5 text-apple-blue mt-1" />
-                                    <div>
-                                        <p className="text-sm text-foreground/50">Datum završetka</p>
-                                        <p className="font-medium">
-                                            {new Date(project.completionDate).toLocaleDateString(locale === 'hu' ? 'hu-HU' : 'sr-RS', { month: 'long', year: 'numeric' })}
-                                        </p>
+                                )}
+                                {project.completionDate && (
+                                    <div className="flex items-start gap-4">
+                                        <Calendar className="w-5 h-5 text-apple-blue mt-1" />
+                                        <div>
+                                            <p className="text-sm text-foreground/50">Datum završetka</p>
+                                            <p className="font-medium">
+                                                {new Date(project.completionDate).toLocaleDateString(locale === 'hu' ? 'hu-HU' : 'sr-RS', { month: 'long', year: 'numeric' })}
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
-                            )}
-                            {project.client && (
-                                <div className="flex items-start gap-4">
-                                    <User className="w-5 h-5 text-apple-blue mt-1" />
-                                    <div>
-                                        <p className="text-sm text-foreground/50">Klijent</p>
-                                        <p className="font-medium">{project.client}</p>
+                                )}
+                                {project.client && (
+                                    <div className="flex items-start gap-4">
+                                        <User className="w-5 h-5 text-apple-blue mt-1" />
+                                        <div>
+                                            <p className="text-sm text-foreground/50">Klijent</p>
+                                            <p className="font-medium">{project.client}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            )}
-                        </div>
-
-                        {/* Features List */}
-                        {project.features && project.features.length > 0 && (
-                            <div className="mt-8 pt-8 border-t border-black/5 dark:border-white/5">
-                                <h4 className="font-bold mb-4">Tehničke karakteristike</h4>
-                                <ul className="space-y-2">
-                                    {project.features.map((feat: string, i: number) => (
-                                        <li key={i} className="flex items-center gap-2 text-sm text-foreground/70">
-                                            <div className="w-1.5 h-1.5 rounded-full bg-apple-blue" />
-                                            {feat}
-                                        </li>
-                                    ))}
-                                </ul>
+                                )}
                             </div>
-                        )}
-                    </motion.div>
-                </div>
+
+                            {/* Features List */}
+                            {project.features && project.features.length > 0 && (
+                                <div className="mt-8 pt-8 border-t border-white/10">
+                                    <h4 className="font-bold mb-4">Tehničke karakteristike</h4>
+                                    <ul className="space-y-2">
+                                        {project.features.map((feat: string, i: number) => (
+                                            <li key={i} className="flex items-center gap-2 text-sm text-foreground/70">
+                                                <div className="w-1.5 h-1.5 rounded-full bg-apple-blue" />
+                                                {feat}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+                        </motion.div>
+                    </div>
+                )}
             </div>
 
             {/* Lightbox */}
