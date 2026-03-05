@@ -160,7 +160,7 @@ export function ProjectDetails({ project, locale }: ProjectDetailsProps) {
                                         <div>
                                             <p className="text-sm text-foreground/50">Datum završetka</p>
                                             <p className="font-medium">
-                                                {new Date(project.completionDate).toLocaleDateString(locale === 'hu' ? 'hu-HU' : 'sr-RS', { month: 'long', year: 'numeric' })}
+                                                {new Date(project.completionDate).toLocaleDateString(locale === 'hu' ? 'hu-HU' : 'sr-Latn-RS', { month: 'long', year: 'numeric' })}
                                             </p>
                                         </div>
                                     </div>
