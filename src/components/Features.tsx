@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import * as LucideIcons from "lucide-react";
 import { urlFor } from "@/sanity/lib/image";
+import Image from "next/image";
 
 interface Feature {
     _id: string;
@@ -63,11 +64,13 @@ export function Features({ features }: FeaturesProps) {
                                 {/* Icon or Image */}
                                 <div className="mb-6">
                                     {feature.image ? (
-                                        <div className="w-16 h-16 rounded-2xl overflow-hidden">
-                                            <img
+                                        <div className="w-16 h-16 rounded-2xl overflow-hidden relative">
+                                            <Image
                                                 src={urlFor(feature.image).width(64).height(64).url()}
                                                 alt={title}
-                                                className="w-full h-full object-cover"
+                                                fill
+                                                className="object-cover"
+                                                sizes="64px"
                                             />
                                         </div>
                                     ) : IconComponent ? (

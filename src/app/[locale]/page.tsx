@@ -18,22 +18,23 @@ import { getTranslations } from 'next-intl/server';
 // Revalidate every 60 seconds so new Sanity content appears without full rebuild
 export const revalidate = 60;
 
+// Single combined GROQ query — eliminates 7 extra round-trips to Sanity CDN
 async function getData(locale: string) {
   const localized = (field: string) => locale === 'hu' ? `coalesce(${field}Hu, ${field})` : field;
 
-  const [hero, features, about, projects, faqs, certificates, testimonials, posts] = await Promise.all([
-    client.fetch(`*[_type == "hero"][0]{
+  const data = await client.fetch(`{
+    "hero": *[_type == "hero"][0]{
       ...,
       "title": ${localized('title')},
       "subtitle": ${localized('subtitle')},
       "cta": ${localized('cta')}
-    }`),
-    client.fetch(`*[_type == "feature"] | order(order asc){
+    },
+    "features": *[_type == "feature"] | order(order asc){
       ...,
       "title": ${localized('title')},
       "description": ${localized('description')}
-    }`),
-    client.fetch(`*[_type == "about"][0]{
+    },
+    "about": *[_type == "about"][0]{
       "title": ${localized('title')},
       "subtitle": ${localized('subtitle')},
       "description": ${localized('description')},
@@ -47,39 +48,39 @@ async function getData(locale: string) {
         "name": ${localized('name')},
         logo
       }
-    }`),
-    client.fetch(`*[_type == "project"] | order(_createdAt desc)[0...6] {
-            ...,
-            "title": ${localized('title')},
-            "description": ${localized('description')},
-            "category": ${localized('category')},
-            "mainImage": mainImage.asset->url,
-            "location": ${localized('location')}
-        }`),
-    client.fetch(`*[_type == "faq"] | order(_createdAt desc){
+    },
+    "projects": *[_type == "project"] | order(_createdAt desc)[0...6]{
+      ...,
+      "title": ${localized('title')},
+      "description": ${localized('description')},
+      "category": ${localized('category')},
+      "mainImage": mainImage.asset->url,
+      "location": ${localized('location')}
+    },
+    "faqs": *[_type == "faq"] | order(_createdAt desc){
       ...,
       "question": ${localized('question')},
       "answer": ${localized('answer')},
       "category": ${localized('category')}
-    }`),
-    client.fetch(`*[_type == "certificate"] | order(_createdAt desc) {
+    },
+    "certificates": *[_type == "certificate"] | order(_createdAt desc){
       ...,
       "pdfUrl": pdfDocument.asset->url
-    }`),
-    client.fetch(`*[_type == "testimonial" && featured == true] | order(_createdAt desc)`),
-    client.fetch(`*[_type == "post"] | order(publishedAt desc, _createdAt desc)[0...3] {
-            _id,
-            "title": ${localized('title')},
-            "excerpt": ${localized('excerpt')},
-            slug,
-            mainImage,
-            publishedAt,
-            _createdAt,
-            category
-        }`)
-  ]);
+    },
+    "testimonials": *[_type == "testimonial" && featured == true] | order(_createdAt desc),
+    "posts": *[_type == "post"] | order(publishedAt desc, _createdAt desc)[0...3]{
+      _id,
+      "title": ${localized('title')},
+      "excerpt": ${localized('excerpt')},
+      slug,
+      mainImage,
+      publishedAt,
+      _createdAt,
+      category
+    }
+  }`);
 
-  return { hero, features, about, projects, faqs, certificates, testimonials, posts };
+  return data;
 }
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {

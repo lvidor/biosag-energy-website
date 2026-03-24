@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { urlFor } from "@/sanity/lib/image";
+import Image from "next/image";
 
 export function HeroClient({ data }: { data: any }) {
     const ref = useRef(null);
@@ -13,7 +14,6 @@ export function HeroClient({ data }: { data: any }) {
 
     const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
     const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-    const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
 
     return (
         <section ref={ref} className="h-screen w-full relative flex items-center justify-center overflow-hidden">
@@ -23,10 +23,19 @@ export function HeroClient({ data }: { data: any }) {
                 className="absolute inset-0 z-0 bg-gradient-to-b from-background to-apple-gray dark:from-background dark:to-apple-dark"
             >
                 {data?.backgroundImage && (
-                    <div
-                        className="absolute inset-0 bg-cover bg-center opacity-30"
-                        style={{ backgroundImage: `url(${urlFor(data.backgroundImage).url()})` }}
-                    />
+                    // Use Next/Image instead of CSS background-image so the browser
+                    // can preload it and it counts as an optimised LCP candidate.
+                    <div className="absolute inset-0 opacity-30 overflow-hidden">
+                        <Image
+                            src={urlFor(data.backgroundImage).width(1920).quality(80).url()}
+                            alt="Biosag Energy hero background"
+                            fill
+                            className="object-cover"
+                            priority
+                            loading="eager"
+                            sizes="100vw"
+                        />
+                    </div>
                 )}
             </motion.div>
 
@@ -61,13 +70,12 @@ export function HeroClient({ data }: { data: any }) {
                 </motion.div>
             </div>
 
-            <motion.div
-                style={{ scale }}
+            {/* Decorative gradient orb */}
+            <div
                 className="absolute bottom-0 w-full h-[50vh] z-0 pointer-events-none opacity-50"
             >
-                {/* Placeholder or Gradient Orb - Optimized with radial-gradient instead of blur */}
                 <div className="w-[700px] h-[700px] rounded-full absolute bottom-[-350px] left-1/2 -translate-x-1/2 transform-gpu will-change-transform" style={{ background: 'radial-gradient(circle, rgba(139, 197, 63, 0.2) 0%, transparent 70%)' }} />
-            </motion.div>
+            </div>
         </section>
     );
 }

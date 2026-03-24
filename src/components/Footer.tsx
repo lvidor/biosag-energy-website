@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import pkg from '../../package.json';
 
 export function Footer() {
     const t = useTranslations('Footer');
@@ -97,12 +98,19 @@ export function Footer() {
 
                 <div className="flex flex-col md:flex-row justify-between items-center pt-4 text-xs">
                     <p>Copyright © {new Date().getFullYear()} Biosag Energy DOO Bečej. {t('copyright')}</p>
-                    <div className="flex space-x-4 mt-2 md:mt-0">
+                    <div className="flex space-x-4 mt-2 md:mt-0 items-center">
                         <span>{t('pib')}: 109648718</span>
                         <span className="text-foreground/20">|</span>
                         <span>{t('mb')}: 21217107</span>
                         <span className="text-foreground/20">|</span>
                         <Link href="#" className="hover:underline">{t('links.privacy-policy')}</Link>
+                        <span className="text-foreground/20">|</span>
+                        <span
+                            title="Website version"
+                            className="font-mono text-foreground/30 hover:text-foreground/50 transition-colors select-none"
+                        >
+                            v{pkg.version}
+                        </span>
                     </div>
                 </div>
             </div>

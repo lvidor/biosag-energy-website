@@ -1,18 +1,31 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 
-export function BackgroundEffects() {
-    const [particles, setParticles] = useState<Array<{ id: number; size: number; left: string; top: string; delay: number }>>([]);
+type Particle = {
+    id: number;
+    size: number;
+    left: string;
+    top: string;
+    delay: number;
+    // computed once, not on every render
+    background: string;
+};
+
+// Memoised so parent re-renders don't re-run the whole component
+export const BackgroundEffects = memo(function BackgroundEffects() {
+    const [particles, setParticles] = useState<Particle[]>([]);
 
     useEffect(() => {
-        // Generate random particles
-        const newParticles = Array.from({ length: 25 }, (_, i) => ({
+        // Reduced from 25 → 8 particles — same visual impression, ~3× less GPU compositing
+        const newParticles = Array.from({ length: 8 }, (_, i) => ({
             id: i,
             size: Math.random() * 120 + 60,
             left: `${Math.random() * 100}%`,
             top: `${Math.random() * 100}%`,
             delay: Math.random() * 25,
+            // Computed once here instead of inside JSX render
+            background: `radial-gradient(circle, rgba(139, 197, 63, ${(Math.random() * 0.2 + 0.1).toFixed(2)}) 0%, transparent 70%)`,
         }));
         setParticles(newParticles);
     }, []);
@@ -25,7 +38,7 @@ export function BackgroundEffects() {
             {/* Grid pattern */}
             <div className="absolute inset-0 grid-pattern opacity-20" />
 
-            {/* Floating particles */}
+            {/* Floating particles — background pre-computed in useEffect */}
             {particles.map((particle) => (
                 <div
                     key={particle.id}
@@ -36,12 +49,12 @@ export function BackgroundEffects() {
                         left: particle.left,
                         top: particle.top,
                         animationDelay: `${particle.delay}s`,
-                        background: `radial-gradient(circle, rgba(139, 197, 63, ${Math.random() * 0.2 + 0.1}) 0%, transparent 70%)`,
+                        background: particle.background,
                     }}
                 />
             ))}
 
-            {/* Large gradient orbs - Brand colors */}
+            {/* Large gradient orbs – Brand colors (will-change only on these 3 orbs) */}
             <div className="absolute top-0 left-1/4 w-[600px] h-[600px] rounded-full animate-pulse transform-gpu will-change-transform" style={{ background: 'radial-gradient(circle, rgba(139, 197, 63, 0.15) 0%, transparent 70%)' }} />
             <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] rounded-full animate-pulse transform-gpu will-change-transform" style={{ background: 'radial-gradient(circle, rgba(0, 102, 204, 0.15) 0%, transparent 70%)', animationDelay: '1.5s' }} />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full animate-pulse transform-gpu will-change-transform" style={{ background: 'radial-gradient(circle, rgba(227, 6, 19, 0.1) 0%, transparent 70%)', animationDelay: '3s' }} />
@@ -51,4 +64,4 @@ export function BackgroundEffects() {
             <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-[#0066CC]/5 to-transparent" />
         </div>
     );
-}
+});

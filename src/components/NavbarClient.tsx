@@ -96,6 +96,8 @@ export function NavbarClient({ initialLogoUrl }: { initialLogoUrl: string }) {
                                 src={logoUrl}
                                 alt="Biosag Energy Logo"
                                 className="h-full w-auto object-contain"
+                                loading="eager"
+                                fetchPriority="high"
                             />
                         </div>
                         <span className="text-white font-bold text-sm tracking-wide leading-tight">

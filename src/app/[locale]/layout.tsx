@@ -10,11 +10,15 @@ import { CartSidebar } from "@/components/CartSidebar";
 const geistSans = Geist({
     variable: "--font-geist-sans",
     subsets: ["latin"],
+    display: "swap",
 });
 
 const geistMono = Geist_Mono({
     variable: "--font-geist-mono",
     subsets: ["latin"],
+    // display: optional means the font only applies if already cached—
+    // it is never actively used on the site so this prevents any render blocking.
+    display: "optional",
 });
 
 import { getTranslations } from 'next-intl/server';

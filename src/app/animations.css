@@ -154,10 +154,16 @@ html {
   animation: fadeInUp 0.6s ease-out;
 }
 
-/* Parallax effect helper */
+/* Parallax effect helper
+   NOTE: Apply .parallax-active only while the animation is running (add/remove via JS)
+   to avoid permanently hinting the GPU about every element. */
 .parallax {
-  transform: translateZ(0);
-  will-change: transform;
+    transform: translateZ(0);
+}
+
+/* Add this class right before animating, remove it after. */
+.parallax-active {
+    will-change: transform;
 }
 
 /* Text gradient animation */
