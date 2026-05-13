@@ -1,0 +1,446 @@
+/* ============================================================
+   Loxone Smart Home Advisor — Isolated CSS
+   These styles are scoped to the advisor page only and do not
+   affect the rest of the Biosag Energy website.
+   ============================================================ */
+
+/* Brand accent: use Biosag green instead of lime yellow */
+:root {
+  --advisor-accent: #8BC53F;
+  --advisor-accent-dim: rgba(139, 197, 63, 0.42);
+  --advisor-accent-bg: rgba(139, 197, 63, 0.1);
+  --advisor-accent-selected: rgba(139, 197, 63, 0.82);
+  --advisor-bg: #10120f;
+  --advisor-surface: rgba(255, 255, 255, 0.055);
+  --advisor-border: rgba(255, 255, 255, 0.1);
+}
+
+.advisor-root {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--advisor-bg);
+  color: #f8f5ec;
+}
+
+.advisor-root *,
+.advisor-root *::before,
+.advisor-root *::after {
+  box-sizing: border-box;
+}
+
+/* ── Panel ── */
+.advisor-tool-panel {
+  max-height: calc(100vh - 128px);
+  overflow: auto;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(12, 14, 13, 0.74);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.38);
+  backdrop-filter: blur(28px);
+}
+
+/* ── Nav pills ── */
+.advisor-nav-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.4rem;
+  border-radius: 999px;
+  padding: 0 1rem;
+  color: rgb(214 211 209);
+  transition: 180ms ease;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.advisor-nav-pill:hover {
+  color: white;
+}
+
+.advisor-nav-pill-active {
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+}
+
+/* ── Mobile tabs ── */
+.advisor-mobile-tab {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  border-radius: 999px;
+  color: rgb(168 162 158);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.advisor-mobile-tab-active {
+  background: white;
+  color: var(--advisor-bg);
+}
+
+/* ── Option cards ── */
+.advisor-option {
+  min-height: 116px;
+  border: 1px solid var(--advisor-border);
+  background: rgba(255, 255, 255, 0.045);
+  padding: 1rem;
+  transition: 180ms ease;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+}
+
+.advisor-option:hover {
+  border-color: var(--advisor-accent-dim);
+  background: rgba(255, 255, 255, 0.075);
+}
+
+.advisor-option-selected {
+  border-color: var(--advisor-accent-selected);
+  background: var(--advisor-accent-bg);
+}
+
+/* ── Surface cards ── */
+.advisor-number-surface,
+.advisor-result-strip,
+.advisor-quotation-band,
+.advisor-consultant,
+.advisor-insight-list,
+.advisor-crm-hero {
+  border: 1px solid var(--advisor-border);
+  background: var(--advisor-surface);
+}
+
+.advisor-number-surface {
+  padding: 1.25rem;
+}
+
+/* ── Range slider ── */
+.advisor-range {
+  margin-top: 2rem;
+  width: 100%;
+  accent-color: var(--advisor-accent);
+}
+
+/* ── Result strip ── */
+.advisor-result-strip {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* ── Buttons ── */
+.advisor-icon-button,
+.advisor-primary-button,
+.advisor-secondary-button {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 0 1rem;
+  color: white;
+  transition: 180ms ease;
+  cursor: pointer;
+  background: transparent;
+}
+
+.advisor-icon-button {
+  width: 2.75rem;
+  justify-content: center;
+  padding: 0;
+}
+
+.advisor-icon-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.32;
+}
+
+.advisor-primary-button {
+  border-color: var(--advisor-accent);
+  background: var(--advisor-accent);
+  color: var(--advisor-bg);
+  font-weight: 700;
+}
+
+.advisor-secondary-button,
+.advisor-icon-button {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.advisor-icon-button-bright {
+  border-color: var(--advisor-accent);
+  color: var(--advisor-accent);
+}
+
+/* ── Quotation band ── */
+.advisor-quotation-band {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1.25rem;
+}
+
+/* ── Score ring ── */
+.advisor-score-ring {
+  --score: 80;
+  display: grid;
+  width: 112px;
+  height: 112px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: conic-gradient(var(--advisor-accent) calc(var(--score) * 1%), rgba(255, 255, 255, 0.12) 0);
+}
+
+.advisor-score-ring span {
+  display: grid;
+  width: 82px;
+  height: 82px;
+  place-items: center;
+  border-radius: 50%;
+  background: #111410;
+  color: white;
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+/* ── Score grid ── */
+.advisor-score-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.advisor-score-tile {
+  border: 1px solid var(--advisor-border);
+  background: rgba(255, 255, 255, 0.045);
+  padding: 0.9rem;
+}
+
+.advisor-score-tile span {
+  display: block;
+  margin-top: 0.6rem;
+  color: rgb(214 211 209);
+  font-size: 0.82rem;
+}
+
+.advisor-score-tile strong {
+  display: block;
+  margin-top: 0.35rem;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.advisor-score-tile div {
+  margin-top: 0.75rem;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.advisor-score-tile i {
+  display: block;
+  height: 100%;
+  background: var(--advisor-accent);
+}
+
+/* ── Insight list ── */
+.advisor-insight-list {
+  padding: 1rem;
+}
+
+.advisor-insight-list ul {
+  margin: 0.9rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.advisor-insight-list li {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.58rem 0;
+  color: rgb(214 211 209);
+  font-size: 0.9rem;
+}
+
+/* ── Consultant / Chat ── */
+.advisor-consultant {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.advisor-chat-log {
+  display: grid;
+  max-height: 250px;
+  gap: 0.6rem;
+  overflow: auto;
+}
+
+.advisor-chat-message {
+  max-width: 88%;
+  border: 1px solid var(--advisor-border);
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.75rem;
+  color: rgb(231 229 228);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.advisor-chat-user {
+  justify-self: end;
+  border-color: rgba(139, 197, 63, 0.35);
+  background: rgba(139, 197, 63, 0.11);
+}
+
+.advisor-prompt-button {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.45rem 0.7rem;
+  color: rgb(214 211 209);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: 150ms ease;
+}
+
+.advisor-prompt-button:hover {
+  border-color: rgba(139, 197, 63, 0.35);
+  color: white;
+}
+
+.advisor-consultant-input {
+  min-width: 0;
+  flex: 1;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.22);
+  color: white;
+  outline: none;
+  padding: 0 0.9rem;
+  height: 2.75rem;
+}
+
+.advisor-consultant-input:focus {
+  border-color: rgba(139, 197, 63, 0.5);
+}
+
+/* ── Admin ── */
+.advisor-admin-grid {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.advisor-admin-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border: 1px solid var(--advisor-border);
+  background: rgba(255, 255, 255, 0.045);
+  padding: 0.85rem;
+}
+
+.advisor-admin-row strong,
+.advisor-admin-feature strong,
+.advisor-timeline-item strong {
+  display: block;
+  color: white;
+}
+
+.advisor-admin-row small,
+.advisor-admin-feature p,
+.advisor-timeline-item p {
+  color: rgb(168 162 158);
+  margin: 0;
+}
+
+.advisor-admin-row input {
+  width: 132px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+  padding: 0.55rem;
+}
+
+.advisor-admin-feature {
+  border: 1px solid var(--advisor-border);
+  background: rgba(255, 255, 255, 0.045);
+  padding: 1rem;
+}
+
+.advisor-admin-feature strong {
+  margin-top: 0.7rem;
+}
+
+.advisor-admin-feature p {
+  margin-top: 0.4rem;
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+/* ── CRM ── */
+.advisor-crm-hero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem;
+}
+
+.advisor-timeline {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.advisor-timeline-item {
+  display: flex;
+  gap: 0.9rem;
+  border: 1px solid var(--advisor-border);
+  background: rgba(255, 255, 255, 0.045);
+  padding: 0.9rem;
+}
+
+.advisor-timeline-item > span {
+  display: grid;
+  width: 1.8rem;
+  height: 1.8rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--advisor-accent);
+  color: var(--advisor-bg);
+  font-weight: 700;
+}
+
+/* ── Metric cells ── */
+.advisor-metric {
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+}
+
+.advisor-metric:last-child {
+  border-right: none;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1023px) {
+  .advisor-tool-panel {
+    max-height: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .advisor-result-strip,
+  .advisor-quotation-band,
+  .advisor-crm-hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .advisor-score-grid {
+    grid-template-columns: 1fr;
+  }
+}
